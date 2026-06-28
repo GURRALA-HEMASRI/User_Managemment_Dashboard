@@ -360,16 +360,34 @@ const useUsers = () => {
     }
 
     try {
-      if (user.id) {
-        const updatedUser = await updateUser(
-          user.id,
-          user
-        );
+      /*
+      ==========================================================
+      UPDATE EXISTING USER
+      ==========================================================
+      */
 
-        const normalizedUser = {
-          ...user,
-          ...updatedUser,
-        };
+      if (user.id) {
+        let normalizedUser;
+
+        // Existing JSONPlaceholder users
+        if (user.id <= 10) {
+          const updatedUser = await updateUser(
+            user.id,
+            user
+          );
+
+          normalizedUser = {
+            ...user,
+            ...updatedUser,
+          };
+        }
+
+        // Users created locally (not present on JSONPlaceholder)
+        else {
+          normalizedUser = {
+            ...user,
+          };
+        }
 
         setAllUsers((previousUsers) =>
           previousUsers.map((currentUser) =>
@@ -383,9 +401,16 @@ const useUsers = () => {
           NOTIFICATION_TYPES.SUCCESS,
           SUCCESS_MESSAGES.USER_UPDATED
         );
-      } else {
-        const createdUser =
-          await createUser(user);
+      }
+
+      /*
+      ==========================================================
+      CREATE NEW USER
+      ==========================================================
+      */
+
+      else {
+        const createdUser = await createUser(user);
 
         const nextId =
           allUsers.length > 0
@@ -400,7 +425,7 @@ const useUsers = () => {
         const normalizedUser = {
           ...user,
           ...createdUser,
-          id: createdUser.id ?? nextId,
+          id: nextId,
         };
 
         setAllUsers((previousUsers) => [
@@ -434,7 +459,6 @@ const useUsers = () => {
       };
     }
   };
-
   /*
   ==========================================================
   Delete Modal

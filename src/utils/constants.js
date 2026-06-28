@@ -225,6 +225,3 @@ export const DELETE_MODAL = {
 
 export const APP_TITLE =
   "User Management Dashboard";
-
-export const APP_SUBTITLE =
-  "Manage users with enterprise-grade search, filtering, sorting, pagination and CRUD operations.";

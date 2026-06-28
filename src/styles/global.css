@@ -86,21 +86,24 @@ Header
 .dashboard-header__content {
   display: flex;
 
-  justify-content: space-between;
+  justify-content: center;
 
   align-items: center;
 
-  gap: 20px;
+  text-align: center;
 }
 
 .dashboard-header__title {
-  font-size: 2rem;
+  font-size: 2.5rem;
+
+  font-weight: 700;
 
   color: #2563eb;
 
-  margin-bottom: 8px;
-}
+  margin: 0;
 
+  text-align: center;
+}
 .dashboard-header__subtitle {
   color: #6b7280;
 }
