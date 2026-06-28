@@ -2,7 +2,7 @@
 
 A responsive User Management Dashboard built using **React.js**, **JavaScript**, **Vite**, and **Axios**. This application allows users to manage user information with features like searching, filtering, sorting, pagination, and CRUD operations.
 
-## Live Link [Live Demo](user-managemment-dashboard-hkuyk9m5i-gurrala-hemasris-projects.vercel.app)
+## Live Link [Live Demo](https://user-managemment-dashboard.vercel.app/)
 
 ## Features
 
