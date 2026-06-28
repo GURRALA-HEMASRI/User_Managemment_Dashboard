@@ -41,12 +41,6 @@ src/
 
 ## Getting Started
 
-Clone the repository:
-
-```bash
-git clone <repository-url>
-```
-
 Install dependencies:
 
 ```bash
